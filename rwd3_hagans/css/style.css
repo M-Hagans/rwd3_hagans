@@ -1,0 +1,140 @@
+/* Page settings (WHAT IT IS)
+   Lets me change colors easily (WHAT IT DOES)
+   Makes the page simple to update (WHAT IT MEANS) */
+:root {
+  --ink: #111;
+  --muted: #555;
+  --bg: #f4f4f4;
+  --card: #fff;
+  --line: rgba(0, 0, 0, .12);
+  --shadow: 0 10px 22px rgba(0,0,0,.06);
+  --radius: 14px;
+}
+
+/* Box sizing rule (WHAT IT IS)
+   Makes sizing easier (WHAT IT DOES)
+   Stops layout problems (WHAT IT MEANS) */
+* {
+  box-sizing: border-box;
+}
+
+/* Basic page setup (WHAT IT IS)
+   Sets the main look (WHAT IT DOES)
+   Keeps everything consistent (WHAT IT MEANS) */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+
+  /* Text that grows and shrinks (WHAT IT IS)
+     Makes reading smoother (WHAT IT DOES)
+     Works on all screens (WHAT IT MEANS) */
+  font-size: clamp(16px, 1vw + 12px, 20px);
+
+  line-height: 1.6;
+}
+
+/* Page wrapper (WHAT IT IS)
+   Centers the content (WHAT IT DOES)
+   Keeps text from stretching too wide (WHAT IT MEANS) */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 32px);
+}
+
+/* Heading sizes (WHAT IT IS)
+   Makes titles adjust on screens (WHAT IT DOES)
+   Helps show what is most important (WHAT IT MEANS) */
+h1 {
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 5vw + 10px, 60px);
+  line-height: 1.08;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: clamp(20px, 2.5vw + 12px, 32px);
+  line-height: 1.2;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: clamp(16px, 1.8vw + 10px, 22px);
+  line-height: 1.25;
+}
+
+/* Regular text (WHAT IT IS)
+   Styles the main writing (WHAT IT DOES)
+   Keeps lines easy to read (WHAT IT MEANS) */
+p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  max-width: 65ch;
+}
+
+/* Small text (WHAT IT IS)
+   Makes tiny labels (WHAT IT DOES)
+   Shows less‑important info (WHAT IT MEANS) */
+.small {
+  font-size: clamp(12px, 1vw + 8px, 14px);
+  color: var(--muted);
+}
+
+/* Section boxes (WHAT IT IS)
+   Adds background and borders (WHAT IT DOES)
+   Makes content look organized (WHAT IT MEANS) */
+.hero {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(14px, 2.4vw + 8px, 24px);
+  box-shadow: var(--shadow);
+  margin-bottom: clamp(14px, 2.4vw + 8px, 22px);
+}
+
+/* Card layout (WHAT IT IS)
+   Starts with one column (WHAT IT DOES)
+   Works well on small screens (WHAT IT MEANS) */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Card style (WHAT IT IS)
+   Gives each card a box (WHAT IT DOES)
+   Makes info easy to scan (WHAT IT MEANS) */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(12px, 2vw + 6px, 18px);
+  box-shadow: var(--shadow);
+}
+
+/* Bigger screen layout (WHAT IT IS)
+   Adds more columns (WHAT IT DOES)
+   Uses space better on large screens (WHAT IT MEANS) */
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Footer style (WHAT IT IS)
+   Adds spacing at the bottom (WHAT IT DOES)
+   Finishes the page cleanly (WHAT IT MEANS) */
+footer {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
